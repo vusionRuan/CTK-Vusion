@@ -410,9 +410,9 @@ QString ctkDICOMItem::Decode( const DcmTag& tag, const OFString& raw ) const
           // be suppressed.
         }
       }
-
+	  return QString::fromLocal8Bit(raw.c_str());
       //std::cout << "Decode '" <<  raw.c_str() << "' to '" << decoders[encodingName]->toUnicode( raw.c_str() ).toLocal8Bit().constData() << "'" << std::endl;
-      return decoders[encodingName]->toUnicode( raw.c_str() );
+      //return decoders[encodingName]->toUnicode( raw.c_str() );
     }
     else
     {
